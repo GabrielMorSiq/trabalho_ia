@@ -1,41 +1,126 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block extra_head %}
+    <!-- Link para o CSS específico do dashboard -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
 
 {% block content %}
-<div class="container mt-4">
-    <h1 class="text-center">Análise de Vendas em E-commerce</h1>
-    <p class="text-center mt-3">
-        Este projeto oferece uma visão detalhada das transações de vendas online, com insights sobre tendências de vendas, popularidade de categorias, e preferências de pagamento.
-    </p>
+    <div class="main-content" >
+        <h2>Visão Análise de vendas por categoria e região</h2>
 
-    <!-- Navegação principal para as diferentes páginas de análise -->
-    <div class="row text-center mt-5">
-        <div class="col-md-4">
-            <a href="{'www.google.com'}" class="btn btn-primary btn-lg">Visualização de Dados</a>
-            <p class="mt-2">Explore o dataset e visualize estatísticas básicas.</p>
+        <div class="box">
+            <img src="{% static 'image/i1.png' %}" class="iconimg" />
+            <i class='bx bx-dots-vertical-rounded dots3'></i>
+            <h2>Electronics</h2>
+            <p>Mais vendidos</p>
         </div>
-        <div class="col-md-4">
-            <a href="{'www.google.com'}" class="btn btn-secondary btn-lg">Análise Temporal</a>
-            <p class="mt-2">Veja as tendências de vendas ao longo do tempo.</p>
+        <div class="box">
+            <img src="{% static 'image/i2.png' %}" class="iconimg" />
+            <i class='bx bx-dots-vertical-rounded dots3'></i>
+            <h2>Asia</h2>
+            <p>Região com menos vendas</p>
         </div>
-        <div class="col-md-4">
-            <a href="{'www.google.com'}" class="btn btn-info btn-lg">Clusterização</a>
-            <p class="mt-2">Descubra agrupamentos de produtos e clientes.</p>
+        <div class="box">
+            <img src="{% static 'image/i3.png' %}" class="iconimg" />
+            <i class='bx bx-dots-vertical-rounded dots3'></i>
+            <h2>$12,345</h2>
+            <p>Total de Vendas</p>
         </div>
-    </div>
+        <div class="box">
+            <img src="{% static 'image/i4.png' %}" class="iconimg" />
+            <i class='bx bx-dots-vertical-rounded dots3'></i>
+            <h2>Credit Card</h2>
+            <p>Método de pagamento mais utilizado</p>
+        </div>
+        <div class="clearfix"></div>
 
-    <div class="row text-center mt-4">
-        <div class="col-md-4">
-            <a href="{'www.google.com'}" class="btn btn-success btn-lg">Categorias e Regiões</a>
-            <p class="mt-2">Análise por categoria e região de vendas.</p>
+        <div class="chartbox">
+            <h2>Análise de vendas por categoria e região</h2>
+            <canvas id="salesChart" width="100%!important"></canvas>
         </div>
-        <div class="col-md-4">
-            <a href="{'www.google.com'}" class="btn btn-warning btn-lg">Métodos de Pagamento</a>
-            <p class="mt-2">Preferências de pagamento e impacto nas vendas.</p>
+
+        <div class="clbox">
+            <div class="clinner">
+                <p>Categoria mais vendida</p>
+                <h1 class="h1" id="topCategory">Electronics</h1>
+                <span class="green">+ Vendas mais altas</span>
+            </div>
+            <div class="clinner">
+                <p>Região com vendas mais baixas</p>
+                <h1 class="h1" id="lowestRegion">Asia</h1>
+                <span class="red">- Foco crescimento</span>
+            </div>
         </div>
-        <div class="col-md-4">
-            <a href="{'www.google.com'}" class="btn btn-dark btn-lg">Sobre o Projeto</a>
-            <p class="mt-2">Informações sobre o projeto e metodologia.</p>
-        </div>
+        <div class="clearfix"></div>
     </div>
-</div>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".dirarrow").click(function(){
+                $(".sidebar").addClass('sidebartoggle');
+                $(".dirarrow").hide();
+                $(".dirarrowright").show();
+                $(".sidemenu li a").css('font-size', '0');
+                $(".sidemenu li a .bx").css('font-size', '20px');
+                $(".sidebar h3 span").css('font-size', '0');
+                $(".main-content").css('width', '70%');
+                $(".right-sidebar").css('width', '25%');
+                $(".box").css('width', '22.2%');
+                $(".sidemenu li a .bx").css('padding-left','5px');
+                $(".sidemenu li a .bx").css('padding-right','0px');
+            });
+            $(".dirarrowright").click(function(){
+                $(".sidebar").removeClass('sidebartoggle');
+                $(".dirarrowright").hide();
+                $(".dirarrow").show();
+                $(".sidemenu li a .bx").css('font-size', '20px');
+                $(".sidemenu li a").css('font-size', '16px');
+                $(".sidebar h3 span").css('font-size', '18px');
+                $(".main-content").css('width', '59%');
+                $(".right-sidebar").css('width', '21%');
+                $(".box").css('width', '22%');
+                $(".sidemenu li a .bx").css('padding-left','0px');
+                $(".sidemenu li a .bx").css('padding-right','10px');
+            });
+            $("#mbmenu").click(function(){
+                $(".mobile-menu .sidemenu").toggleClass('hidden');
+            });
+        });
+
+        // Gráfico para análise de vendas por categoria e região
+        var ctx = document.getElementById('salesChart').getContext('2d');
+        var salesChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['North America', 'Europe', 'Asia'],
+                datasets: [
+                    { label: 'Electronics', backgroundColor: '#4caf50', data: [100000, 80000, 50000] },
+                    { label: 'Home Appliances', backgroundColor: '#ff9800', data: [40000, 60000, 45000] },
+                    { label: 'Clothing', backgroundColor: '#2196f3', data: [35000, 55000, 40000] },
+                    { label: 'Books', backgroundColor: '#9c27b0', data: [25000, 20000, 15000] },
+                    { label: 'Beauty Products', backgroundColor: '#f44336', data: [15000, 30000, 20000] },
+                    { label: 'Sports', backgroundColor: '#795548', data: [10000, 5000, 8000] }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    xAxes: [{ stacked: true }],
+                    yAxes: [{ stacked: true, ticks: { beginAtZero: true } }]
+                },
+                title: {
+                    display: true,
+                    text: 'Receita total por categoria e região'
+                }
+            }
+        });
+    </script>
 {% endblock %}

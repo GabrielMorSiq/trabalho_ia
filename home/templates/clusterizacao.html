@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Mineração e IA: Clusterização e Aprendizado Não Supervisionado{% endblock %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="main-content">
+        <h1>Mineração e IA: Clusterização e Aprendizado Não Supervisionado</h1>
+        <p>O aprendizado não supervisionado é um campo crucial da inteligência artificial que permite a análise de dados sem a necessidade de rotulagem prévia. A clusterização é uma das principais técnicas dentro desse paradigma, permitindo agrupar dados semelhantes em conjuntos, ou clusters. Este artigo explora os principais algoritmos de clusterização, seus funcionamentos e aplicações.</p>
+
+        <br><br>
+        <h3>O Que é Aprendizado Não Supervisionado?</h3>
+        <p>Aprendizado não supervisionado é um tipo de aprendizado de máquina em que um modelo é treinado em um conjunto de dados não rotulado. Ao contrário do aprendizado supervisionado, onde o modelo aprende com exemplos rotulados, no aprendizado não supervisionado o objetivo é explorar a estrutura dos dados, identificar padrões e agrupá-los de acordo com suas características.</p>
+
+        <br><br>
+        <h3>Clusterização: Conceito e Importância</h3>
+        <p>A clusterização refere-se à tarefa de dividir um conjunto de dados em grupos de tal forma que os dados em cada grupo sejam mais semelhantes entre si do que com dados em outros grupos. Essa técnica é fundamental para diversas aplicações, como segmentação de mercado, reconhecimento de padrões, compressão de imagem e análise de redes sociais.</p>
+
+        <br><br>
+        <h3>Principais Algoritmos de Clusterização</h3>
+        <p>Existem vários algoritmos de clusterização, cada um com suas particularidades e aplicações. Abaixo estão alguns dos mais utilizados:</p>
+
+        <br><br>
+        <h4>1. K-Means</h4>
+        <p>O algoritmo K-Means é um dos métodos de clusterização mais populares. Ele funciona da seguinte forma:</p>
+        <ol>
+            <li>Escolha o número de clusters (K) desejado.</li>
+            <li>Inicialize K centróides aleatoriamente no espaço dos dados.</li>
+            <li>Atribua cada ponto de dado ao centróide mais próximo.</li>
+            <li>Atualize a posição dos centróides como a média dos pontos atribuídos a cada cluster.</li>
+            <li>Repita os passos 3 e 4 até que os centróides não mudem mais ou até que um número máximo de iterações seja atingido.</li>
+        </ol>
+        <p>K-Means é eficiente e fácil de implementar, mas pode ser sensível à escolha inicial dos centróides e ao valor de K.</p>
+        <br><img src="https://www.alura.com.br/artigos/assets/clusterizacao/gif-kmeans.gif" style="height: 300px", class="center">
+
+        <br><br>
+        <h4>2. DBSCAN (Density-Based Spatial Clustering of Applications with Noise)</h4>
+        <p>O DBSCAN é um algoritmo de clusterização baseado em densidade que identifica clusters de forma mais robusta. Seu funcionamento é baseado nos seguintes princípios:</p>
+        <ol>
+            <li>Defina dois parâmetros: a distância máxima entre pontos (epsilon) e o número mínimo de pontos necessários para formar um cluster.</li>
+            <li>Identifique os pontos "centrais", que têm pelo menos o número mínimo de vizinhos dentro da distância epsilon.</li>
+            <li>Forme clusters a partir desses pontos centrais, incluindo todos os pontos densamente conectados.</li>
+            <li>Classifique pontos isolados como ruído.</li>
+        </ol>
+        <p>DBSCAN é eficaz em identificar clusters de forma arbitrária e lidar com ruídos, mas a escolha dos parâmetros pode afetar seu desempenho.</p>
+        <br><img src="https://www.alura.com.br/artigos/assets/clusterizacao/gif-dbscan.gif" style="height: 300px", class="center">
+
+
+        <br><br>
+        <h4>3. Hierarchical Clustering</h4>
+        <p>Este algoritmo constrói uma hierarquia de clusters, podendo ser dividido em duas abordagens: aglomerativa (bottom-up) e divisiva (top-down). A abordagem aglomerativa funciona da seguinte maneira:</p>
+        <ol>
+            <li>Trate cada ponto de dado como um cluster individual.</li>
+            <li>Encontre os dois clusters mais próximos e combine-os.</li>
+            <li>Repita o processo até que todos os pontos estejam em um único cluster ou atinja um critério de parada.</li>
+        </ol>
+        <p>Hierarchical clustering permite visualizar a estrutura dos dados por meio de dendrogramas, facilitando a interpretação dos clusters formados.</p>
+        <br><img src="https://www.alura.com.br/artigos/assets/clusterizacao/gif-meanshift.gif" style="height: 300px", class="center">
+
+        <br><br>
+        <h4>Mean Shift</h4>
+        <p>Encontra automaticamente a quantidade de clusters e é baseado na densidade dos pontos. É útil quando os clusters têm formas e tamanhos arbitrários</p>
+        <br><img src="https://www.alura.com.br/artigos/assets/clusterizacao/dendrograma.jpg" style="height: 300px", class="center">
+
+        <br><br>
+        <h3>Conclusão</h3>
+        <p>A clusterização e o aprendizado não supervisionado desempenham papéis essenciais na análise de dados. Cada algoritmo possui suas vantagens e desvantagens, e a escolha do método adequado depende das características do conjunto de dados e dos objetivos da análise. A compreensão desses algoritmos é fundamental para a aplicação eficaz de técnicas de mineração de dados e inteligência artificial.</p>
+
+        <div class="clearfix"></div>
+    </div>
+
+     <div class="main-content">
+        <h2>Bibliotecas de Python para Análise de Dados em Vendas Online</h2>
+        <p>As bibliotecas de Python desempenham um papel fundamental na análise de dados, facilitando operações matemáticas, manipulação e visualização. Este artigo explora algumas das bibliotecas mais importantes e suas utilidades no contexto da análise de transações de vendas online.</p>
+
+        <br><br>
+        <h3>1. NumPy (import numpy as np)</h3>
+        <p><strong>Utilidade:</strong> NumPy é fundamental para realizar operações matemáticas e manipulação de arrays de forma eficiente. No contexto do nosso objetivo, NumPy pode ser usado para realizar cálculos necessários na análise de tendências de vendas, preferências de pagamento e comportamento de compra.</p>
+        <p><strong>Exemplo de Uso:</strong> Cálculo de médias e variâncias de preços de produtos em diferentes regiões para identificar tendências.</p>
+
+        <br><br>
+        <h3>2. Pandas (import pandas as pd)</h3>
+        <p><strong>Utilidade:</strong> Pandas é essencial para a manipulação e análise de dados. Ele facilita a leitura de dados de várias fontes, a limpeza, e a análise exploratória. No nosso caso, Pandas ajudará a organizar e manipular o conjunto de dados de transações de vendas online.</p>
+        <p><strong>Exemplo de Uso:</strong> Importação dos dados de vendas, agrupamento por regiões, categorias de produtos, e métodos de pagamento para análise.</p>
+
+        <br><br>
+        <h3>3. Matplotlib (import matplotlib.pyplot as plt)</h3>
+        <p><strong>Utilidade:</strong> Matplotlib é crucial para a visualização de dados. Ele permite criar gráficos que ajudam a entender padrões e tendências nos dados de vendas.</p>
+        <p><strong>Exemplo de Uso:</strong> Criação de gráficos de dispersão para visualizar a relação entre preços de produtos e a quantidade vendida em diferentes regiões.</p>
+
+        <br><br>
+        <h3>4. Seaborn (import seaborn as sns)</h3>
+        <p><strong>Utilidade:</strong> Seaborn, construído sobre o Matplotlib, oferece gráficos estatísticos mais atraentes e fáceis de interpretar. Ele será útil para criar visualizações detalhadas dos dados, facilitando a identificação de padrões complexos.</p>
+        <p><strong>Exemplo de Uso:</strong> Visualização de mapas de calor para mostrar a correlação entre diferentes categorias de produtos e preferências regionais de pagamento.</p>
+
+        <br><br>
+        <h3>5. Locale (import locale)</h3>
+        <p><strong>Utilidade:</strong> A biblioteca locale é usada para configurar e formatar números, datas e moedas conforme as convenções locais. Isso é importante para garantir que os dados sejam apresentados de forma compreensível para os diferentes mercados regionais.</p>
+        <p><strong>Exemplo de Uso:</strong> Formatação de preços e datas conforme as convenções locais das regiões analisadas.</p>
+
+        <br><br>
+        <h3>6. KMeans (from sklearn.cluster import KMeans)</h3>
+        <p><strong>Utilidade:</strong> KMeans é um algoritmo de clustering que ajudará a agrupar as transações de vendas em clusters distintos, facilitando a identificação de padrões de compra e tendências regionais.</p>
+        <p><strong>Exemplo de Uso:</strong> Agrupamento de transações por categorias de produtos para identificar padrões de venda, preferências de pagamento e comportamentos de compra em diferentes regiões.</p>
+
+        <br><br>
+        <h3>Aplicação das Bibliotecas</h3>
+        <p>Estas bibliotecas em conjunto permitem a análise detalhada do conjunto de transações de vendas online. Elas ajudam a processar os dados, aplicar técnicas de machine learning para identificar clusters, e visualizar os resultados de forma clara e compreensível. Isso fornece à empresa insights valiosos para otimizar a alocação de estoque, campanhas de marketing e estratégias de vendas, alinhando-se com o objetivo proposto.</p>
+
+        <div class="clearfix"></div>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // Exemplo de interação com a página, se necessário
+            console.log("Artigo sobre Clusterização carregado com sucesso!");
+        });
+    </script>
+{% endblock %}

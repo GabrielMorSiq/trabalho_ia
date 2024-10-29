@@ -1,0 +1,313 @@
+/* basic css start*/
+:root{
+    --main-color: #6e6af0;
+    --white: #ffffff;
+    --lightgray: #f2f2fc;
+    --font-color: #211d51;
+    --body: #f8fafb;
+    }
+    *{margin: 0; padding: 0; box-sizing: border-box;
+    font-family: system-ui}
+    body{
+        background: var(--body);
+        margin: 10px;
+        margin-top: 0px;
+    }
+    .clearfix{clear: both;}
+    /* basic css end*/
+
+
+    /* Sidebar css start*/
+    .mobile-menu{display: none;}
+    .sidebar{
+        margin-top: 10px;
+        width: 300px;
+        position: relative;
+        padding: 40px 20px;
+        height: 98vh;
+        float: left;
+        border-radius: 15px;
+        transition: .5s  linear;
+        background: var(--main-color);
+    }
+
+    .sidebartoggle{
+        transition: .5s  linear;
+        width: 70px;
+
+    }
+    .sidebar h3{font-weight: 500;
+        color: var(--white); margin-bottom: 30px;
+    padding-left: 5px;}
+    .dirarrow, .dirarrowright{
+        position: absolute;
+        right: -18px;
+        background: white;
+        padding: 3px;
+        font-size: 30px;
+        border-radius: 23px;
+        top: 60px;
+        box-shadow: 3px 3px 5px #00000036;
+    }
+    .dirarrowright{display: none;}
+    .sidemenu li{
+        list-style: none;
+        padding: 20px 0px;
+        color: white;
+    }
+    .sidemenu li a .bx{padding-right: 10px;}
+    .sidemenu li a{font-size: 16px; font-weight:normal;
+    cursor: pointer;}
+    .sidemenu li:nth-child(11){
+        position: absolute;
+        bottom: 10px;
+    }
+
+    /* Sidebar css End*/
+
+    /* Main-content css start*/
+    .main-content{
+        padding: 25px;
+        width: 80%;
+        float: left;
+    }
+    .box{
+        width: 22%;
+        margin-top: 30px;
+        margin-left: 20px;
+        padding: 25px;
+        float: left;
+        position: relative;
+        background: white;
+        height: 200px;
+        border-radius: 25px;
+        box-shadow: 5px 4px 24px 8px #dddddd47;
+    }
+    .iconimg{
+        width: 30px;
+        margin-bottom: 15px;
+    }
+    .dots3{
+        position: absolute;
+        right: 15px;
+        top: 25px;
+        font-size: 30px;
+        color: var(--font-color);
+        border-radius: 23px;
+        padding: 5px;
+    }
+    .dots3:hover{
+        background: #dddddd4a;
+        cursor: pointer;
+    }
+    .box h2{color: var(--font-color);}
+    .box p{color: var(--font-color);}
+    .chartbox{background: white; padding: 25px;
+        box-shadow: 5px 4px 24px 8px #dddddd47;
+        border-radius: 25px;
+        margin-top: 30px;
+        width: 60%; float: left; margin-left: 20px;}
+    .chartbox h2{
+        margin-bottom: 20px;
+        color:var(--font-color);
+        font-size: 20px;
+    }
+    .chartbox h2 span{float: right;font-weight: 500;
+    font-size: 16px;}
+    .clbox {width: 33%; float: left; margin-left: 20px;}
+    .clinner{width: 100%;box-shadow: 5px 4px 24px 8px #dddddd47;
+        border-radius: 25px; background: white;
+        height: 142px;
+        margin-top: 33px; padding: 25px;
+    position: relative;}
+    .h1{
+        font-size: 20px;
+        color: var(--font-color);
+    }
+    .green{
+            position: absolute;
+        top: 70px;
+        right: 35px;
+        background: #e6fcdc;
+        padding: 5px;
+        border-radius: 5px;
+        color: #5be726;
+    }
+    .red{
+        background: #f9dade;
+         position: absolute;
+        top: 70px;
+        right: 35px;
+        padding: 5px;
+        border-radius: 5px;
+        color: #ea3636;
+    }
+    .mailsect{
+    box-shadow: 5px 4px 24px 8px #dddddd47;
+        border-radius: 25px; background: white;
+        height: 180px;
+        width: 96%;
+        margin-top: 30px;
+        margin-left: 20px;
+        padding: 25px;
+    }
+    table tr{border: 1px solid #ddd;}
+    table tr td{
+        padding: 10px;
+        width: 200px;
+    }
+    .usericon{
+        font-size: 27px;
+        color: var(--font-color);
+    }
+    /* Main-content css End*/
+
+
+    /* right-sidebar css start*/
+    .right-sidebar{
+        width: 21%;
+        float: left;
+        background: var(--lightgray);
+        border-radius: 45px;
+        padding: 50px 25px;
+    }
+    .topicon{float: right;}
+    .righticon{
+        font-size: 24px;
+        position: relative;
+        margin-left: 10px;
+    }
+    .redcircle::after, .redcircle1::after{
+            position: absolute;
+        content: "";
+        height: 8px;
+        width: 8px;
+        background: red;
+        border-radius: 10px;
+        top: 5px;
+        left: 13px
+    }
+    .redcircle1::after{left: 18px;}
+    .profile{width: 70px; display: inline-block;
+        margin-left: 10px;}
+    .profile img{
+        width: 35px;
+        vertical-align: bottom;
+        border-radius: 20px;
+        display: inline-block;
+    }
+    .boxr{
+        background: white;
+        height: 250px;
+        padding: 25px;
+        margin-top: 30px;
+        border-radius: 25px;
+        margin-bottom: 40px;
+        box-shadow: 5px 4px 24px 8px #dddddd47;
+    }
+    .progress {
+        margin-top: 20px;
+       width: 100%;
+       border-radius: 15px;
+       box-shadow: 0 0 3px #B0B0;
+       background: var(--lightgray);
+    }
+
+    .bar {
+       width: 100%;
+       border-radius: 15px;
+       color: white;
+       box-sizing: border-box;
+       text-align: center;
+    }
+    .bar.albanian {
+       background: var(--main-color);
+       width: 50%;
+       height: 15px;
+    }
+    .boxrbottom{
+        text-align: center;
+        margin-top: 20px;
+    }
+    .btn{
+        margin-top: 20px;
+        width: 100%;
+        padding: 9px;
+        font-size: 16px;
+        border-radius: 10px;
+        border: none;
+        background: var(--main-color);
+        color: white;
+        cursor: pointer;
+    }
+    .todoul{margin-top: 20px;}
+    .todoul li{
+        list-style: none;
+        padding: 7px 0px;
+    }
+    .todoul li .bx{
+        padding: 14px 13px;
+        background: #e3e6f4;
+        font-size: 25px;
+        border-radius: 13px;
+        color: var(--font-color);
+    }
+    .todoul li p{
+        display: inline-block;
+        padding-left: 10px;
+        font-weight: bold;
+        color: var(--font-color);
+        height: 60px;
+        vertical-align: middle;
+    }
+    .todoul li p span{font-size: 12px; font-weight: normal;
+    color: #acaeb8;}
+    .boardbox{
+            background: white;
+        padding: 25px;
+        border-radius: 20px;
+        padding-left: 40px;
+        margin-top: 20px;
+        box-shadow: 5px 4px 24px 8px #dddddd47;
+    }
+    .meet_p{font-size: 15px; margin-bottom: 10px; position: relative;}
+    .meet_p::after{
+            content: "";
+        position: absolute;
+        height: 15px;
+        width: 15px;
+        background: var(--main-color);
+        border-radius: 10px;
+        left: -25px;
+        top: 3px;
+    }
+    .meet_p1{
+        font-size: 13px;
+        color: #8a8d9e;
+    }
+    /* right-sidebar css End*/
+
+    /* Responsive css start*/
+
+    @media only screen and (max-width: 1000px) {
+        .mobile-menu{
+            background: var(--main-color);
+        padding: 20px;
+        margin: 0px;
+        color: white;
+        display: block;
+        }
+        .mobile-menu .bx{
+            float: right;
+        font-size: 35px;
+        margin-top: -3px;
+        }
+        .hidden{display: none; transition: .5s ease-in-out;}
+      body{overflow: scroll; margin: 0px;}
+      .main-content{width: 100%;}
+      .box{margin-left: 0px; width: 100%;}
+      .chartbox{width: 100%; margin-left: 0px;}
+      .clbox{width: 100%; margin-left: 0px;}
+      .mailsect{width: 100%; margin-left: 0px; font-size: 12px;}
+      .right-sidebar{width: 100%; background: transparent;}
+    }

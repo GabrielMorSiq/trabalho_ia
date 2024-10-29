@@ -23,4 +23,10 @@ from django.contrib import admin
 urlpatterns = [
     path('admin/', admin.site.urls),  # Rota para o painel administrativo do Django
     path('', views.index, name='index'),  # Página inicial
+    path('vendas/', views.vendas, name='vendas'),  # Relatório de Vendas
+    path('produtos_mais_vendidos/', views.produtos_mais_vendidos, name='produtos_mais_vendidos'),
+    path('analise_regional/', views.analise_regional, name='analise_regional'),
+    path('clusterizacao/', views.clusterizacao, name='clusterizacao'),
+    path('ia_analise/', views.ia_analise, name='ia_analise'),
+
 ]

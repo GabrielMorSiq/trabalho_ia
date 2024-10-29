@@ -1,9 +1,50 @@
-<nav style="background-color: #333; padding: 1rem;">
-    <div style="max-width: 1200px; margin: auto; display: flex; align-items: center; justify-content: space-between;">
-        <a href="/" style="color: white; font-size: 1.5rem; text-decoration: none;">Início</a>
-        <ul style="list-style-type: none; display: flex; gap: 1rem; margin: 0;">
-            <li><a href="#" style="color: white; text-decoration: none;">Sobre</a></li>
-            <li><a href="#" style="color: white; text-decoration: none;">Contato</a></li>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     {% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+    {% endblock %}
+</head>
+
+<body>
+    <!-- Sidebar Container -->
+    <div class="sidebar">
+        <!-- Mobile Toggle Button -->
+        <div class="mobile-menu">
+            <h3>Admin Dashboard</h3>
+            <i class='bx bx-menu' id="mbmenu"></i>
+            <ul class="sidemenu hidden">
+                <li><a href="/">Home</a></li>
+            </ul>
+        </div>
+
+        <!-- Sidebar Content -->
+        <ul class="sidemenu">
+            <h3 ><a style="color: white" href="https://www.kaggle.com/datasets/shreyanshverma27/online-sales-dataset-popular-marketplace-data">Online Sales Dataset - Popular Marketplace Data</a></h3>
+
+            <!-- Home Link -->
+            <li><a href="/" title="Visão geral do dashboard"><i class='bx bx-home-alt'></i> <span>Home</span></a></li>
+
+            <!-- Vendas -->
+            <li><a href="/vendas" title="Relatório de vendas com detalhes de categoria, região e período"><i class='bx bx-bar-chart-alt'></i> <span>Relatório de Vendas</span></a></li>
+
+            <!-- Produtos Mais Vendidos -->
+            <li><a href="/produtos_mais_vendidos" title="Produtos mais vendidos, com detalhes de categoria e região"><i class='bx bx-cart'></i> <span>Top Produtos</span></a></li>
+
+
+            <!-- Análise Regional -->
+            <li><a href="/analise_regional" title="Desempenho de vendas por região"><i class='bx bx-map'></i> <span>Análise Regional</span></a></li>
+
+            <!-- Clusterização - destaque para IA -->
+            <li><a href="/clusterizacao" title="Análise de clusters para identificar segmentos de clientes e tendências de vendas"><i class='bx bx-brain'></i> <span>Clusterização</span></a></li>
+
+            <!-- Painel de IA - abordagens de clusterização -->
+            <li><a href="/ia_analise" title="Painel dedicado à aplicação de algoritmos de IA e análises avançadas"><i class='bx bx-cog'></i> <span>Considerações Finais</span></a></li>
         </ul>
     </div>
-</nav>
+</body>
+</html>

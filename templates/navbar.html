@@ -1,13 +1,13 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     {% block extra_head %}
+    <title>Admin Dashboard</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
-    {% endblock %}
 </head>
 
 <body>
@@ -24,27 +24,60 @@
 
         <!-- Sidebar Content -->
         <ul class="sidemenu">
-            <h3 ><a style="color: white" href="https://www.kaggle.com/datasets/shreyanshverma27/online-sales-dataset-popular-marketplace-data">Online Sales Dataset - Popular Marketplace Data</a></h3>
+            <h3>
+                <a style="color: white"
+                    href="https://www.kaggle.com/datasets/shreyanshverma27/online-sales-dataset-popular-marketplace-data">
+                    Online Sales Dataset - Popular Marketplace Data
+                </a>
+            </h3>
 
             <!-- Home Link -->
-            <li><a href="/" title="Visão geral do dashboard"><i class='bx bx-home-alt'></i> <span>Home</span></a></li>
+            <li>
+                <a href="/" title="Visão geral do dashboard">
+                    <i class='bx bx-home-alt'></i>
+                    <span>Home</span>
+                </a>
+            </li>
 
             <!-- Vendas -->
-            <li><a href="/vendas" title="Relatório de vendas com detalhes de categoria, região e período"><i class='bx bx-bar-chart-alt'></i> <span>Relatório de Vendas</span></a></li>
+            <li>
+                <a href="/clusters" title="Comparação entre os clusters">
+                    <i class='bx bx-bar-chart-alt'></i>
+                    <span>Comparação Entre os Clusters</span>
+                </a>
+            </li>
 
             <!-- Produtos Mais Vendidos -->
-            <li><a href="/produtos_mais_vendidos" title="Produtos mais vendidos, com detalhes de categoria e região"><i class='bx bx-cart'></i> <span>Top Produtos</span></a></li>
+            <li>
+                <a href="/analise" title="Análise Completa">
+                    <i class='bx bx-cart'></i>
+                    <span>Análise Completa</span>
+                </a>
+            </li>
 
-
-            <!-- Análise Regional -->
-            <li><a href="/analise_regional" title="Desempenho de vendas por região"><i class='bx bx-map'></i> <span>Análise Regional</span></a></li>
-
-            <!-- Clusterização - destaque para IA -->
-            <li><a href="/clusterizacao" title="Análise de clusters para identificar segmentos de clientes e tendências de vendas"><i class='bx bx-brain'></i> <span>Clusterização</span></a></li>
-
-            <!-- Painel de IA - abordagens de clusterização -->
-            <li><a href="/ia_analise" title="Painel dedicado à aplicação de algoritmos de IA e análises avançadas"><i class='bx bx-cog'></i> <span>Considerações Finais</span></a></li>
+            <li>
+                <a href="/clusterizacao" title="Análise Completa">
+                    <i class='bx bx-cart'></i>
+                    <span>Clusterização</span>
+                </a>
+            </li>
         </ul>
     </div>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-content">
+        {% block content %}
+        <!-- Conteúdo da página -->
+        {% endblock %}
+    </div>
+
+    <!-- Scripts para Toggle Responsivo -->
+    <script>
+        document.getElementById('mbmenu').addEventListener('click', function () {
+            const sidemenu = document.querySelector('.sidemenu');
+            sidemenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
+
 </html>

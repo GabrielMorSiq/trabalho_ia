@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Análise Completa{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main-content">
+  <h1>Análise Completa</h1>
+  <br><br>
+  <!-- Vendas e Receita -->
+  <h2>1. Vendas e Receita</h2>
+  <ul>
+    <li><strong>Cluster 4:</strong> Apresenta as maiores médias em preço unitário e receita total, indicando produtos de
+      alto valor.</li>
+    <li><strong>Cluster 0:</strong> Tem maior variação positiva em unidades vendidas, mas receita negativa.</li>
+    <li><strong>Clusters 1, 2 e 3:</strong> Mostram valores negativos em unidades vendidas e receita, sugerindo
+      problemas nos dados ou retornos significativos de compras.</li>
+  </ul>
+
+  <!-- Preços -->
+  <br><br>
+  <h2>2. Preços</h2>
+  <ul>
+    <li><strong>Cluster 4:</strong> Se destaca com preços unitários altos, sugerindo produtos de alto valor.</li>
+    <li><strong>Cluster 2:</strong> Apresenta preços unitários negativos, indicando que é necessária uma revisão dos
+      dados.</li>
+    <li><strong>Cluster 3:</strong> Apresenta variação considerável nos preços, mostrando diferentes faixas de preço.
+    </li>
+  </ul>
+
+  <!-- Métodos de Pagamento e Região -->
+  <br><br>
+  <h2>3. Métodos de Pagamento e Região</h2>
+  <ul>
+    <li><strong>Cluster 0:</strong> Utiliza apenas um método de pagamento e está restrito a uma única região específica.
+    </li>
+    <li><strong>Outros Clusters:</strong> Mostram maior diversidade em métodos de pagamento e regiões, indicando um
+      mercado mais amplo.</li>
+  </ul>
+
+  <!-- Categorias de Produtos -->
+  <br><br>
+  <h2>4. Categorias de Produtos</h2>
+  <ul>
+    <li><strong>Clusters 0, 2 e 3:</strong> São homogêneos em categoria de produto.</li>
+    <li><strong>Clusters 1 e 4:</strong> São mais diversificados, indicando maior variedade de produtos.</li>
+  </ul>
+
+  <!-- Conclusão -->
+  <br><br>
+  <h2>Conclusão</h2>
+  <p>A análise revela que o <strong>Cluster 4</strong> possui produtos de alto valor, com preços unitários e receitas
+    elevadas. Por outro lado, os <strong>Clusters 1, 2 e 3</strong> enfrentam resultados negativos, indicando possíveis
+    problemas operacionais ou erros nos dados.</p>
+  <p>Além disso, a diversidade em métodos de pagamento e categorias de produtos nos <strong>Clusters 1 e 4</strong>
+    sugere um mercado mais amplo, especialmente em comparação com o <strong>Cluster 0</strong>, que se limita a uma
+    única região e método de pagamento.</p>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  console.log("Página de Análise Completa carregada com sucesso.");
+</script>
+{% endblock %}

@@ -5,10 +5,10 @@ def index(request):
     return render(request, 'index.html', {'show_main_content': True})
 
 def vendas(request):
-    return render(request, 'vendas.html')
+    return render(request, 'clusters.html')
 
 def produtos_mais_vendidos(request):
-    return render(request, 'produtos_mais_vendidos.html')
+    return render(request, 'analise.html')
 
 def analise_regional(request):
     return render(request, 'analise_regional.html')
